@@ -55,9 +55,11 @@ if 'expenses' in st.session_state and 'income' in st.session_state:
 
     # Visualization
     st.header("Expense Visualization")
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(15, 6))  # Increased width
     sns.barplot(x='category', y='amount', data=st.session_state['expenses'], estimator=sum, errorbar=None, palette='viridis', ax=ax)
+    plt.xticks(rotation=45, ha='right')  # Rotate labels 45 degrees
     ax.set_title("Expense Breakdown")
+    plt.tight_layout()  # Adjust layout to prevent clipping
     st.pyplot(fig)
 
     # Savings Goal
@@ -68,6 +70,7 @@ if 'expenses' in st.session_state and 'income' in st.session_state:
         st.success(f"Savings goal set to ₹{savings_goal:.2f}!")
         remaining = st.session_state['income'] - total_spent - savings_goal
         st.write(f"Remaining after savings: ₹{remaining:.2f}")
+
     # Hybrid ML-based Budget Plan
     st.header("Smart Budget Plan")
     if len(st.session_state['expenses']) > 1 and 'savings_goal_set' in st.session_state:
@@ -107,9 +110,11 @@ if 'expenses' in st.session_state and 'income' in st.session_state:
             st.write(f"{cat}: ₹{float(amt):.2f}")
 
         # Visualize Budget Plan
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=(15, 6))  # Increased width
         sns.barplot(x=list(suggested_limits.keys()), y=[float(v) for v in suggested_limits.values()], palette='magma', ax=ax)
+        plt.xticks(rotation=45, ha='right')  # Rotate labels 45 degrees
         ax.set_title("Suggested Budget Allocation")
+        plt.tight_layout()  # Adjust layout to prevent clipping
         st.pyplot(fig)
     else:
         st.write("Add or upload more than one expense and set a savings goal for a personalized budget plan.")
