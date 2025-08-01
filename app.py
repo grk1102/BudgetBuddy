@@ -86,12 +86,13 @@ with st.sidebar:
     st.write("Empower your finances with smart tracking and planning!")
     st.markdown("**Categories:** Shopping, Dining, Entertainment, Utilities, Transport, Food, Medicine, Books, Stationary, Tuition, Hostel, Study Materials, Snacks, Office Supplies, Travel, Subscription, Training, Rent, Groceries, Childcare, Insurance, Other")
     st.markdown("---")
-    st.write("© 2025 xAI | Designed with ❤️")
+    st.write("© 2025 | Designed with ❤️")
+    st.write("|For You, For Always |")
 
 # Hero Section
 st.markdown(
     f"""
-    <div style="background-image: url(r'hero-bg.jpg'); background-size: cover; background-position: center; padding: 50px 0; text-align: center; color: #1a252f;">
+    <div style="background-image: url(r"hero-bg.png"); background-size: cover; background-position: center; padding: 50px 0; text-align: center; color: #1a252f;">
         <h2 style="font-size: 48px; font-weight: bold; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Take Control of Your Finances</h2>
         <p style="font-size: 20px; color: #2ecc71;">Track, Save, and Plan with BudgetBuddy</p>
     </div>
